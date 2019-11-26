@@ -1,0 +1,33 @@
+/* _____________ 초기값 _____________ */
+		*{margin:0;padding:0;}
+		body{margin:0;padding:0;font-family:Helvetica;}
+		li{list-style:none;}
+		a:link, a:visited{text-decoration:none;color:#111;}
+		em{font-style:normal;}
+		#wrap{width:100%;margin:0 auto;position:relative;color:#111;}
+		img{border:none;}
+		input {-webkit-appearance: none;-moz-appearance: none;appearance: none;border-radius: 0px;}
+		button:hover{cursor:pointer}
+		fieldset{border:none;}
+	/* _____________ 버리거나 숨길때 _____________ */
+		.hidden{position:absolute;
+			left:-9999999px;
+			line-height:0;
+			font-size:1px;width:1px;height:1px;}
+	/* _____________ 기본 폰트 지정 _____________ */
+		@font-face{ 
+				font-family:"FuturaEF_Heavy_eot";
+				src:url("../font/FuturaEF-Heavy.eot");
+			}
+		@font-face{ 
+				font-family:"FuturaEF_Heavy_woff";
+				src:url("../font/FuturaEF-Heavy.woff");
+			}
+		@font-face{ 
+				font-family:"FuturaEF_Medium_eot";
+				src:url("../font/FuturaEF-Medium.eot");
+			}
+		@font-face{ 
+				font-family:"FuturaEF_Medium_woff";
+				src:url("../font/FuturaEF-Medium.woff");
+			}

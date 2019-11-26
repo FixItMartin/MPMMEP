@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <title>M. PARK</title>
+  <script src="js/jquery-1.12.4.min.js"></script>
+  <style>
+	/* _____________ 초기값 _____________ */
+		*{margin:0;padding:0;}
+		body{margin:0;padding:0;font-family:Helvetica;}
+		li{list-style:none;}
+		a:link, a:visited{text-decoration:none;color:#111;}
+		em{font-style:normal;}
+		#wrap{width:100%;margin:0 auto;position:relative;color:#111;}
+		img{border:none;}
+		input {-webkit-appearance: none;-moz-appearance: none;appearance: none;border-radius: 0px;}
+		button:hover{cursor:pointer}
+		fieldset{border:none;}
+	/* _____________ 버리거나 숨길때 _____________ */
+		.hidden{position:absolute;
+			left:-9999999px;
+			line-height:0;
+			font-size:1px;width:1px;height:1px;}
+
+	/* _____________ css _____________ */
+		#wrap{width:100%;/*background-color:#fefefe;*/}
+		#container{width:100%;position:relative;}
+		/* _____________ #header _____________ */
+			#header_wrap{width:320px;padding-right:30px;padding-top:20px;position:fixed;right:0;top:0;/*background-color:rgba(200,200,200,0.3);*/}
+			#header{width:100%;font-size:45px;}
+			#headline{width:100%;font-size:17px;font-weight:bold;padding-top:20px;}
+			#info{width:100%;font-size:15px;padding-top:20px;}
+			.info_short{padding-top:10px;display:inline-block}
+			#desc{width:100%;font-size:15px;padding-top:20px;font-weight:normal;text-align:justify}
+		/* _____________ #container _____________ */
+			#section_wrap{
+				width:100%;padding-right:350px;
+				position:relative;/*background-color:rgba(200,200,200,0.3);*/
+				-moz-box-sizing: border-box;
+				box-sizing: border-box;
+			}
+			/* _____________ #section _____________ */
+				.section{width:100%;padding-right:20px;padding-top:20px;-moz-box-sizing: border-box;box-sizing: border-box;}
+				.section:after{content:"";display:block;clear:both}
+				.section_img{
+					float:left;
+					width:50%;padding-left:20px;padding-top:20px;
+					-moz-box-sizing: border-box;
+					box-sizing: border-box;
+				}
+				.section_img img{width:100%}
+				.img_1{width:100%;}
+  </style>
+ </head>
+ <body>
+	<div id="wrap">
+		<!-- 전체를 담아주는 영역 -->
+		<div id="container">
+			<!-- 컨텐츠 담아주는 영역 -->
+				<div id="header_wrap">
+					<h1 id="header">M. PARK</h1>
+					<!--<div id="nav">
+						<span class="nav_1">1</span>
+						<span class="nav_2">2</span>
+						<span class="nav_3">3</span>
+						<span class="nav_4">4</span>
+						<span class="nav_5">5</span> n 
+
+					</div>-->
+					<h4 id="headline">효창동 첫 집</h4>
+					<div id="info">
+						<em>
+							Category_Architecture, Private residence, Built
+							Location_ Seoul, South Korea
+							Project period_2015-2016
+						</em>
+						<em class="info_short">
+							Participation in all process (design, control of works) _in "B.U.S Architecture"
+						</em>
+					</div>
+					<h5 id="desc">
+						서울은 손바닥만한 땅도 소름끼칠 정도로 비싸다. 작은 땅에는 고층 집합주거가 올라가고 그 안에서의 프리미엄 주거가 생겨났다. 관리도 쉽고 미래에 팔기 용이한 네임드 아파트들. 어찌보면 내 명의의 아파트 한채가 인생의 꿈이 된 것도 무리가 아니다. 기성세대에게 집이란, 거주의 목적이기 보다는 투자상품의 목적이 더 컸다.
+						하지만 N포세대에게 주택은 포기해야 하는 하나의 항목. 십년 이상 저축을 해도 서울에서는 아파트를 살 수 없다. 차라리 그 돈으로 아주 아주 작은 건물이라도 내 집을 지을 수 있다면? 기존의 주거개념에 지칠대로 지친 새로운 세대는 진짜 주거의 의미에 대해 고민한다. 투자상품이 아닌 진짜 집.
+					</h5>
+				</div>
+				<div id="section_wrap">
+					<!-- (이미지 영역 마우스 이벤트를 위해 영역설정을 전체로 함) -->
+					<!--
+						각 섹션별 한 프로젝트에 대한 자료들을 넣으면 됩니다.
+						src에 이미지가 있는 폴더명/이미지명
+						alt에 이미지의 이름(설명이 될만한 문장or 단어로)
+						
+						class가 hidden인 h4 태그들은 웹표준을 위해 만든 태그이니
+						태그들이니 각 섹션명(프로젝트명)을 적으면 됩니다.
+						(실제 화면에 보이지 않는 요소들)
+
+
+					-->
+					<div class="section section_1">
+						<h4 class="hidden">효창동 첫 집</h4>
+						<p class="section_img img_1">
+							<img src="img/hs1_1.jpg" alt="house_img1"/>
+						</p>
+						<p class="section_img img_2">
+							<img src="img/hs1_2.png" alt="house_img2"/>
+						</p>
+						<p class="section_img img_3">
+							<img src="img/hs1_3.png" alt="house_img2"/>
+						</p>
+					</div>
+					<!-- (이미지 영역 마우스 이벤트를 위해 영역설정을 전체로 함) -->
+				</div>
+			<!-- 컨텐츠 담아주는 영역 -->
+		</div>
+		<div id="footer">
+			<!-- 푸터 영역 -->
+				<div id="lang">
+					<a href="./M_park_ko.html" title="korean">KO</a>
+					<a href="./M_park_fr.html" title="french">FR</a>
+				</div>
+			<!-- 푸터 영역 -->
+		</div>
+		<!-- 전체를 담아주는 영역 -->
+	</div>
+ </body>
+</html>
+<!--
+	폰트는 일단 Bebas Neue로 했는데 저작권문제가 있으니까 좀 더 생각해보자
+
+	텍스트 (1)
+	M. PARK
+
+	텍스트 (2)
+	(프랑스어버전일때)
+	La 1ère maison à Hyochangdong
+
+	텍스트 (3)
+	Catégorie_Architecture, Maison construite
+	Lieu_ Séoul, Corée du Sud
+	Temps du projet_2015-2016
+	Participation à tous les affaires (design, contrôle des travaux)_dans “B.U.S Architecture”
+
+	텍스트 (4)
+	Comme la plupart de la population active a déménagé à la capitale, la valeur foncière de Séoul est montée en flèche. De plus, les consommateurs ont tendance à préférer les immeubles de grande hauteur aux maisons unifamiliales. Les appartements sont faciles à gérer et faciles à vendre à l'avenir. Pour les vieilles générations, le but d’investissement de l’appartement était supérieur au but de la résidence. Mais pour les jeunes ces jours-ci, le logement est une autre valeur à abandonner. Même s’ils économisent de l’argent plus de 10 ans, ils ne peuvent pas acheter un bon appartement à Séoul. Avec cet argent, de plus en plus de jeunes couples espèrent plutôt construire un très petit bâtiment. Une vraie maison qui les réconforte épuisés. Ne pas créer une produit pour ventre mais une maison leur adaptée.
+	
+	텍스트 (2)
+	효창동 첫 집
+	
+	텍스트 (3)
+	Category_Architecture, Private residence, Built
+	Location_ Seoul, South Korea
+	Project period_2015-2016
+	Participation in all process (design, control of works) _in "B.U.S Architecture"
+
+	텍스트 (4)
+	서울은 손바닥만한 땅도 소름끼칠 정도로 비싸다. 작은 땅에는 고층 집합주거가 올라가고 그 안에서의 프리미엄 주거가 생겨났다. 관리도 쉽고 미래에 팔기 용이한 네임드 아파트들. 어찌보면 내 명의의 아파트 한채가 인생의 꿈이 된 것도 무리가 아니다. 기성세대에게 집이란, 거주의 목적이기 보다는 투자상품의 목적이 더 컸다.
+	하지만 N포세대에게 주택은 포기해야 하는 하나의 항목. 십년 이상 저축을 해도 서울에서는 아파트를 살 수 없다. 차라리 그 돈으로 아주 아주 작은 건물이라도 내 집을 지을 수 있다면? 기존의 주거개념에 지칠대로 지친 새로운 세대는 진짜 주거의 의미에 대해 고민한다. 투자상품이 아닌 진짜 집.
+-->

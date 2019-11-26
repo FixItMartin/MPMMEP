@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>MMeM. PARK</title>
+  <script src="js/jquery-1.12.4.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/reset.css"/>
+  <style>
+		/* _____________ css _____________ */
+		::-webkit-scrollbar {
+			display: none;
+		}
+		::-ms-scrollbar {
+			display: none;
+		}
+		::scrollbar {
+			display: none;
+		}
+		#wrap{width:100vw;height:100vh;/*background-color:#fefefe;*/}
+		#mmem{width:100%;height:100%;position:relative;}
+		#mme_wrap{width:50%;height:100%;display:block;position:absolute;left:0;top:0;z-index:3;}
+		#m_wrap{width:50%;height:100%;display:block;position:absolute;left:50%;top:0;z-index:3;}
+		#mme_area{width:100%;height:100%;background-color:black;display:block;position:absolute;left:-50%;top:0;transition:left 0.5s;z-index:1;}
+		#m_area{width:100%;height:100%;background-color:white;display:block;position:absolute;left:50%;top:0;transition:left 0.5s;z-index:1;}
+		#tit_area{
+			position:absolute;left:50%;top:50px;
+			transform:translate(-50%, 0);
+			font-size:130px;font-family:"FuturaEF_Heavy_woff","FuturaEF_Heavy_eot";
+			color:#000;
+			z-index:2;
+			text-align:right;
+		}
+		#tit_area h2{font-weight:400;}
+		#tit_top{text-align:left;margin-right:260px;}
+		.mme_dot,.m_dot{display:none;}
+		.mme_dot{color:white};
+		.m_dot{color:black;}
+		.mme_top{color:white;}
+		.mme_bottom{color:white;}
+		#tit_bottom{text-align:center;}
+  </style>
+ </head>
+ <body>
+	<script>
+		window.onload = function () {
+			setTimeout(function() {
+			  jQuery(document).ready(function(){
+				$('#mme_area').addClass('mme_area_run');
+				$('#m_area').addClass('m_area_run');
+
+				$('#mme_wrap,.mme_top,.mme_dot,.mme_bottom').mouseover(function(){
+				$('.mme_area_run').css({'left':'0','z-index':'1'});
+				$('.m_area_run').css({'left':'100%','z-index':'1'});
+				$('.m_bottom,.mme_bottom').css('color','white');
+				$('.mme_dot').fadeIn(100);
+			});
+			$('#m_wrap,.m_top,.m_dot,.m_bottom').mouseover(function(){
+				$('.mme_area_run').css({'left':'-100%','z-index':'1'});
+				$('.m_area_run').css({'left':'0%','z-index':'1'});
+				$('.m_bottom,.mme_bottom').css('color','black');
+				$('.m_dot').fadeIn(100);
+			});
+			  });
+			}, 1000);
+			jQuery(document).ready(function(){
+			
+		  });
+		};
+		
+	</script>
+	<div id="wrap">
+		<div id="mmem">
+			<a id="mme_wrap">
+			</a>
+			<a id="m_wrap">
+			</a>
+			<div id="mme_area">
+			</div>
+			<div id="m_area">
+			</div>
+			<div id="tit_area">
+				<h2 id="tit_top"><span class="mme_top">MMe</span><span class="mme_dot">.</span><span class="m_top">M</span><span class="m_dot">.</span></h2>
+				<h2 id="tit_bottom"><span class="mme_bottom">PA</span><span class="m_bottom">RK</span></h2>
+			</div>
+		</div>
+	</div>
+ </body>
+</html>
