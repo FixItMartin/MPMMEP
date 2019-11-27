@@ -6,6 +6,31 @@
   <script src="js/jquery-1.12.4.min.js"></script>
   <link rel="stylesheet" type="text/css" href="css/reset.css"/>
   <style>
+    /*
+      --- 태그 정리 ---
+
+        #mmem 모든 태그를 담아주는 실질적 wrap 과 같은 id
+
+        최 상단의(z-index:3) id
+        #mme_wrap : 좌측 영역(링크 삽입)
+        #m_wrap   : 우측 영역(링크 삽입)
+
+        배경화면 기능을 하는 div id
+        #mme_area : 좌측 영역 검은색
+        #m_area   : 우측 영역 하얀색
+          hover 시 사용할 class
+          .mme_active : 좌측에 hover 시 발동
+          .m_active   : 우측에 hover 시 발동
+        텍스트 element
+        #tit_area : 텍스트 담아주는 id
+        #tit_top  : 상단의 텍스트 담아주는 id(상단의 elements 는 hover에 따른 효과 필요x)
+          .mme_top,.mme_dot   : mme 가 active 될 때만 보이는 class
+          .m_top,.m_dot       : m 가 active 될 때만 보이는 class
+        #tit_bottom : 하단의 텍스트를 담아주는 id(상단.mme_bottom)
+          .mme_bottom : 첫 화면에 글자색상 white 로 지정 , hover 시 생기고 사라지는 태그
+          .m_bottom   : 첫 화면에 글자색상 white 로 지정 , hover 시 생기고 사라지는 태그
+
+    */
 		/* _____________ css _____________ */
 		::-webkit-scrollbar {
 			display: none;
@@ -16,13 +41,18 @@
 		::scrollbar {
 			display: none;
 		}
-		#wrap{width:100vw;height:100vh;/*background-color:#fefefe;*/}
+    /* ### 큰 영역들 ### */
+    #mme_wrap:focus,#m_wrap:focus{outline: none;}
+		#wrap{width:100vw;height:100vh;}
 		#mmem{width:100%;height:100%;position:relative;}
 		#mme_wrap{width:50%;height:100%;display:block;position:absolute;left:0;top:0;z-index:3;}
 		#m_wrap{width:50%;height:100%;display:block;position:absolute;left:50%;top:0;z-index:3;}
 		#mme_area{width:100%;height:100%;background-color:black;display:block;position:absolute;left:-50%;top:0;transition:left 0.5s;z-index:1;}
 		#m_area{width:100%;height:100%;background-color:white;display:block;position:absolute;left:50%;top:0;transition:left 0.5s;z-index:1;}
-		#tit_area{
+    /* ### 큰 영역들 기능 부분 ### */
+    #mme_area.mme_active{left:0;}
+    #m_area.mme_active{left:100%;}
+    #tit_area{
 			position:absolute;left:50%;top:50px;
 			transform:translate(-50%, 0);
 			font-size:130px;font-family:"FuturaEF_Heavy_woff","FuturaEF_Heavy_eot";
@@ -43,37 +73,29 @@
  <body>
 	<script>
 		window.onload = function () {
-			setTimeout(function() {
-			  jQuery(document).ready(function(){
-				$('#mme_area').addClass('mme_area_run');
-				$('#m_area').addClass('m_area_run');
-
-				$('#mme_wrap,.mme_top,.mme_dot,.mme_bottom').mouseover(function(){
-				$('.mme_area_run').css({'left':'0','z-index':'1'});
-				$('.m_area_run').css({'left':'100%','z-index':'1'});
-				$('.m_bottom,.mme_bottom').css('color','white');
-				$('.mme_dot').fadeIn(100);
-			});
-			$('#m_wrap,.m_top,.m_dot,.m_bottom').mouseover(function(){
-				$('.mme_area_run').css({'left':'-100%','z-index':'1'});
-				$('.m_area_run').css({'left':'0%','z-index':'1'});
-				$('.m_bottom,.mme_bottom').css('color','black');
-				$('.m_dot').fadeIn(100);
-			});
-			  });
-			}, 1000);
-			jQuery(document).ready(function(){
-			
-		  });
+  		setTimeout(function() {
+    	  jQuery(document).ready(function(){
+      		$('#mme_wrap').on('mouseover focusin', function(){
+            $('.mme_area_run').css({'left':'0','z-index':'1'});
+				    $('.m_area_run').css({'left':'100%','z-index':'1'});
+				    $('.m_bottom,.mme_bottom').css('color','white');
+				    $('.mme_dot').fadeIn(100);
+      	  });
+      		$('#m_wrap').on('mouseover focusin', function(){
+            $('#mme_area, #m_area').removeClass('mme_active');
+            $('#mme_area, #m_area').addClass('m_active');
+        		$('.m_bottom,.mme_bottom').css('color','black');
+        		$('.m_dot').fadeIn(100);
+        	});
+    		});
+  		}, 500);
 		};
-		
+
 	</script>
 	<div id="wrap">
 		<div id="mmem">
-			<a id="mme_wrap">
-			</a>
-			<a id="m_wrap">
-			</a>
+			<a id="mme_wrap" href="./MMe_park_section_fr.html"></a>
+			<a id="m_wrap" href="./M_park_section_fr.html"></a>
 			<div id="mme_area">
 			</div>
 			<div id="m_area">
