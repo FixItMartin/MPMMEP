@@ -52,6 +52,8 @@
     /* ### 큰 영역들 기능 부분 ### */
     #mme_area.mme_active{left:0;}
     #m_area.mme_active{left:100%;}
+    #mme_area.m_active{left:-100%;}
+    #m_area.m_active{left:50%;}
     #tit_area{
 			position:absolute;left:50%;top:50px;
 			transform:translate(-50%, 0);
@@ -60,6 +62,7 @@
 			z-index:2;
 			text-align:right;
 		}
+    /* ### 텍스트를 담아주는 영역 ### */
 		#tit_area h2{font-weight:400;}
 		#tit_top{text-align:left;margin-right:260px;}
 		.mme_dot,.m_dot{display:none;}
@@ -76,15 +79,17 @@
   		setTimeout(function() {
     	  jQuery(document).ready(function(){
       		$('#mme_wrap').on('mouseover focusin', function(){
-            $('.mme_area_run').css({'left':'0','z-index':'1'});
-				    $('.m_area_run').css({'left':'100%','z-index':'1'});
-				    $('.m_bottom,.mme_bottom').css('color','white');
+            $('#mme_area, #m_area').removeClass('m_active');
+            $('#mme_area, #m_area').addClass('mme_active');
+				    $('.m_bottom,.mme_bottom').removeClass('m_bottom');
+            $('.m_bottom,.mme_bottom').addClass('mme_bottom');
 				    $('.mme_dot').fadeIn(100);
       	  });
       		$('#m_wrap').on('mouseover focusin', function(){
             $('#mme_area, #m_area').removeClass('mme_active');
             $('#mme_area, #m_area').addClass('m_active');
-        		$('.m_bottom,.mme_bottom').css('color','black');
+            $('.m_bottom,.mme_bottom').addClass('m_bottom');
+        		$('.m_bottom,.mme_bottom').removeClass('mme_bottom');
         		$('.m_dot').fadeIn(100);
         	});
     		});
