@@ -1,4 +1,8 @@
 /* _____________ 초기값 _____________ */
+	.hidden{position:absolute;
+		left:-9999999px;
+		line-height:0;
+		font-size:1px;width:1px;height:1px;}
 	  *{margin:0;padding:0;}
 	  body{margin:0;padding:0;font-family:Helvetica;}
 	  li{list-style:none;}
