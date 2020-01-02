@@ -76,7 +76,7 @@
 			}
 			/* _____________ .section _____________ */
 				.section{
-					width:100%;
+					width:100%;padding-bottom: 20px;
           -moz-box-sizing: border-box;
           box-sizing: border-box;
 					/*background-color:rgba(200,0,0,0.3);*/
@@ -105,34 +105,43 @@
 			const info_array = [
         'vue de cÔté, photo ©Kyungsub Shin',
         'site avant la construction, 2013',
-        '',
-        'maquette d’étude, <Common Ground>,</br>Panneau de mousse, 160x80cm'
+        ' ',
+        'vue d’arrière, photo ©Kyungsub Shin',
+        'maquette d’étude, &ltCommon Ground&gt,</br>Panneau de mousse, 160x80cm',
+        'axonométrie éclatée, bâtiment est',
+        'axonométrie éclatée, bâtiment ouest',
+        'rendu perspective, porte d’entrée, sketchup et photoshop',
+        'perspective, porte d’entrée, photo ©Kyungsub Shin',
+        'rendu perspective, cour intérieure, sketchup et photoshop',
+        'perspective, cour intérieure, photo ©Kyungsub Shin',
+        'photo ©Kyungsub Shin'
       ];
 			const desc_array = [
         "J’ai participé depuis l’étape du planning de l’affaire, les travaux avant le design m’ont vraiment intéressée. D’abord, on a décidé le conteneur des matériaux de construction pour déplacer et réutiliser. Puis, on a défini l’identité de marque du centre commercial comme “Connexion créative”, et on l’a encore expliquée avec trois idées: la communication entre les personnes, la rencontre de la marque avec les clients, et la connexion avec une communauté régionale. Ensuite, pour cela, on a proposé les trois éléments architecturaux. 1. la cour intérieure, de façon à ce que les personnes se rencontrent et plusieurs activités culturelles aient lieu. 2. l’atmosphère favorisée par les conteneurs, de sorte que des clients aient l’impression d’un marché de rue, pas un grand magasin. 3. l’atrium, pour que des artistes et des vendeurs locaux ouvrent un marché aux puces en toutes saisons.",
         "Sur le quartier à l’est de l’emplacement, il y avait une sphère d’influence commercial. On a mis des conteneurs de taille identique, plus ou moins en avant ou en arrière pour donner un visage dynamique et aéré à l’édifice qui faisait face à la sphère. Et puis, on a imaginé que le premier et deuxième étages seraient remplis par des boutiques. Au dernier étage, on a dessiné des restaurants avec leurs terrasses et une salle polyvalente d’enseignement de la culture en général, afin de donner une raison de monter aux clients.",
-        "Dans la cour intérieur, on a mis en place un camion de nourriture pour faire venir les clients. Et au premier étage du bâtiment ouest, on a pensé une pâtisserie comme lieu de rendez-vous. On a eu un grand atrium en vue pour ouvrir toujours des activités culturelles et des marchés aux puces dans le bâtiment. Autour du celui-ci, on a arrangé des petites boutiques uniques dans le premier et deuxième étages. Identiquement, au dernier étage, on a rempli l’aire de restauration avec leurs terrasses."
+        "Dans la cour intérieur, on a mis en place un camion de nourriture pour faire venir les clients. Et au premier étage du bâtiment ouest, on a pensé une pâtisserie comme lieu de rendez-vous. On a eu un grand atrium en vue pour ouvrir toujours des activités culturelles et des marchés aux puces dans le bâtiment. Autour du celui-ci, on a arrangé des petites boutiques uniques dans le premier et deuxième étages. Identiquement, au dernier étage, on a rempli l’aire de restauration avec leurs terrasses.",
+        "Pour conclure, c’était une bonne opportunité d’avoir rencontré le projet &lt&ltCOMMON GOUND&gt&gt dans ma première compagnie. Spécialement, le fait que j’ai pu travailler en collaboration avec les groupes de Branding, design d’intérieur et architecte paysagiste. Grâce à ce travail, j’ai appris l’importance de bien connaître le client, le pouvoir de Branding et l’influence de la coopération. D’ailleurs, en tant qu’architecte, j’ai pu penser comment on pourrait contribuer non seulement au client, mais aussi à la société locale. Et j’ai aussi trouvé la probabilité du conteneur au moyen d’être bon matière architectural."
       ]
 			$('.text_active').mouseenter(function(){
 				//alert(i.length)
 				let i = $(this).attr('id');
-				switch (i){
-          /*섹션별 바뀌는 desc 문자열*/
-					case "desc_00":
-  					$('#desc').html(desc_array[0]);
-            console.log(i);
-          break;
-          case "desc_01":
-  					$('#desc').html(desc_array[1]);
-            console.log(i);
-          break;
-          case "desc_02":
-  					$('#desc').html(desc_array[2]);
-            console.log(i);
-          break;
-				};
+        let string_id = String(i);
+        let numbers = parseInt(string_id.slice(-2));
+        let check_id = string_id.slice(0,-3);
+        //console.log(check_id);
+        switch (check_id) {
+          case 'desc':
+            $('#desc').html(desc_array[numbers]);
+            console.log(numbers);
+            console.log(check_id);
+            break;
+          case 'img_info':
+            $('#info').html(info_array[numbers]);
+            break;
+        }
 			});
-      $('.section_img').mouseleave(function(){
+      // 마우스를 이미지에서 뺄 때 기본정보로 돌아가게
+      $('.section').mouseleave(function(){
           $('#info').html(original_info);
       });
 		});
@@ -189,21 +198,40 @@
 							<img src="img/arcitle_MME_CommonGround_01.jpg" alt="pre common ground front img" class="text_active" id="img_info_01"/>
 						</p><!--
             --><p class="section_img img_half text_active">
-							<img src="img/arcitle_MME_CommonGround_02.png" alt="sketch img"  class="text_active" id="img_info_03"/>
+							<img src="img/arcitle_MME_CommonGround_02.png" alt="sketch img"  class="text_active" id="img_info_02"/>
 						</p><!--
             --><p class="section_img img_half text_active">
 							<img src="img/arcitle_MME_CommonGround_03.jpg" alt="vue d’arrière, photo ©Kyungsub Shin" class="text_active" id="img_info_03"/>
 						</p><!--
             --><p class="section_img img_half text_active">
-							<img src="img/arcitle_MME_CommonGround_04.jpg" alt="maquette d’étude, <Common Ground>,Panneau de mousse, 160x80cm" id="img_info_03"/>
+							<img src="img/arcitle_MME_CommonGround_04.jpg" alt="maquette d’étude, <Common Ground>,Panneau de mousse, 160x80cm"    class="text_active" id="img_info_04"/>
 						</p>
 					</div>
           <div class="section text_active">
 						<p class="section_img img_half text_active" id="desc_01">
-							<img src="img/arcitle_MME_CommonGround_05.jpg" alt="sketch img" id="img_info_01"/>
+							<img src="img/arcitle_MME_CommonGround_05.jpg" alt="sketch img"  class="text_active" id="img_info_05"/>
 						</p><!--
             --><p class="section_img img_half text_active" id="desc_02">
-							<img src="img/arcitle_MME_CommonGround_06.jpg" alt="sketch img"/>
+							<img src="img/arcitle_MME_CommonGround_06.jpg" alt="sketch img"  class="text_active" id="img_info_06"/>
+						</p>
+					</div>
+          <div class="section text_active">
+						<p class="section_img img_half text_active">
+							<img src="img/arcitle_MME_CommonGround_07.jpg" alt="sketch img"  class="text_active" id="img_info_07"/>
+						</p><!--
+            --><p class="section_img img_half text_active">
+							<img src="img/arcitle_MME_CommonGround_08.jpg" alt="sketch img"  class="text_active" id="img_info_08"/>
+						</p><!--
+            --><p class="section_img img_half text_active">
+							<img src="img/arcitle_MME_CommonGround_09.jpg" alt="sketch img"  class="text_active" id="img_info_09"/>
+						</p><!--
+            --><p class="section_img img_half text_active">
+							<img src="img/arcitle_MME_CommonGround_10.jpg" alt="sketch img"  class="text_active" id="img_info_10"/>
+						</p>
+					</div>
+          <div class="section text_active">
+            <p class="section_img img_wide text_active"  id="desc_03">
+							<img src="img/arcitle_MME_CommonGround_11.jpg" alt="sketch img"  class="text_active" id="img_info_11"/>
 						</p>
 					</div>
 					<!-- (이미지 영역 마우스 이벤트를 위해 영역설정을 전체로 함) -->
