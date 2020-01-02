@@ -75,6 +75,7 @@
     }
     .section:after{content:"";display:block;clear:both}
     .section_img img{width:100%}
+    .section_padding{padding-left:15%;padding-right:15%;text-align: center;}
   /* _____________ section 이미지 _____________ */
     .section_img{
       display:inline-block;
@@ -86,3 +87,29 @@
     }
     .img_wide{width:100%;}
     .img_half{width:50%;}
+    .img_triple{width:33.33%;}
+    .img_triple img{
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      width:100%;padding:10%;
+    }
+    .img_wide_padding{width:100%;}
+    .img_wide_padding img{
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      width:100%;padding:10%;
+    }
+    .img_half_padding{width:50%;}
+    .img_half_padding img{
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      width:100%;padding:10%;
+    }
+    .img_vh{
+      height:100vh;
+      width:50%;
+      padding-top:50px;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+    .img_vh img{width:auto;height:100%;}
